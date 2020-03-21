@@ -26,10 +26,6 @@ If you want to build an _über-jar_, just add the `--uber-jar` option to the com
 
 ## Creating a native executable
 
-You can create a native executable using: `./gradlew buildNative`.
+To create and run native executable, try the [native-image](https://github.com/domaframework/quarkus-sample/tree/native-image) branch in this repository.
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: `./gradlew buildNative --docker-build=true`.
-
-You can then execute your native executable with: `./build/quarkus-sample-1.0-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/gradle-tooling#building-a-native-executable.
+See also [this paragraph in the branch](https://github.com/domaframework/quarkus-sample/tree/native-image#creating-a-native-executable).
