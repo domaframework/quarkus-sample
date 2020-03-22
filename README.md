@@ -11,6 +11,12 @@ You can run your application in dev mode that enables live coding using:
 ./gradlew quarkusDev
 ```
 
+Once started, you can request the provided endpoint:
+```
+$ curl -w "\n" http://localhost:8080/hello
+hello
+```
+
 ## Packaging and running the application
 
 The application can be packaged using `./gradlew quarkusBuild`.
