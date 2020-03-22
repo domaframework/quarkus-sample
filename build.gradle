@@ -39,9 +39,12 @@ compileJava {
     options.compilerArgs << '-parameters'
 }
 
+processResources {
+    exclude domaResources
+}
+
 compileTestJava {
     options.encoding = 'UTF-8'
-    exclude domaResources
 }
 
 java {
