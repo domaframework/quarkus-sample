@@ -2,8 +2,9 @@ package sample;
 
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
+import org.seasar.doma.Metamodel;
 
-@Entity
+@Entity(metamodel = @Metamodel)
 public class Message {
 
   @Id public Integer id;

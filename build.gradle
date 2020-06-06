@@ -4,7 +4,7 @@ plugins {
     id 'org.seasar.doma.compile' version '1.0.0'
 }
 
-def domaVersion = '2.29.0'
+def domaVersion = '2.36.0'
 
 repositories {
      mavenLocal()
@@ -16,10 +16,10 @@ dependencies {
     implementation 'io.quarkus:quarkus-jdbc-h2'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-resteasy'
-    implementation "org.seasar.doma:doma:$domaVersion"
+    implementation "org.seasar.doma:doma-core:$domaVersion"
     runtimeOnly 'com.h2database:h2:1.3.175'
 
-    annotationProcessor "org.seasar.doma:doma:$domaVersion"
+    annotationProcessor "org.seasar.doma:doma-processor:$domaVersion"
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
