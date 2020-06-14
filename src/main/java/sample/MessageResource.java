@@ -1,7 +1,5 @@
 package sample;
 
-import org.seasar.doma.jdbc.criteria.Entityql;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -13,11 +11,9 @@ import java.util.List;
 public class MessageResource {
 
   private final MessageDao messageDao;
-  private final Entityql config;
 
-  public MessageResource(MessageDao messageDao, Entityql config) {
+  public MessageResource(MessageDao messageDao) {
     this.messageDao = messageDao;
-    this.config = config;
   }
 
   @GET
