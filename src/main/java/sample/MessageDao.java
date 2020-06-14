@@ -1,20 +1,17 @@
 package sample;
 
 import org.seasar.doma.Dao;
+import org.seasar.doma.Select;
 import org.seasar.doma.jdbc.Config;
 import org.seasar.doma.jdbc.criteria.Entityql;
 
 import java.util.List;
 
 @Dao
-@DbConfigAware
 public interface MessageDao {
 
-  default Message selectById(Integer id) {
-    Entityql entityql = new Entityql(Config.get(this));
-    Message_ m = new Message_();
-    return entityql.from(m).where(c -> c.eq(m.id, id)).fetchOne();
-  }
+  @Select
+  Message selectById(Integer id);
 
   default List<Message> selectByLocale(Locale locale) {
     Entityql entityql = new Entityql(Config.get(this));

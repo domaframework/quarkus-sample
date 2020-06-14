@@ -1,18 +1,17 @@
 package sample;
 
 import io.quarkus.runtime.StartupEvent;
+import org.seasar.doma.jdbc.Config;
 
 import javax.enterprise.event.Observes;
 
 public class DevLifecycle {
 
-  private final DbConfig dbConfig;
-
+  private final Config dbConfig;
   private final ScriptDao scriptDao;
-
   private final MessageDao messageDao;
 
-  public DevLifecycle(DbConfig dbConfig, ScriptDao scriptDao, MessageDao messageDao) {
+  public DevLifecycle(Config dbConfig, ScriptDao scriptDao, MessageDao messageDao) {
     this.dbConfig = dbConfig;
     this.scriptDao = scriptDao;
     this.messageDao = messageDao;

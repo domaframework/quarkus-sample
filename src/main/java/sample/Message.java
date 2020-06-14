@@ -11,13 +11,11 @@ public class Message {
   public Text text;
   public Locale locale;
 
-  public Message() {
-  }
+  public Message() {}
 
   public Message(Integer id, String text, Locale locale) {
     this.id = id;
     this.text = new Text(text);
     this.locale = locale;
   }
-
 }
