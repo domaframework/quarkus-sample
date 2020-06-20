@@ -13,22 +13,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.quarkus:quarkus-agroal'
-    implementation 'io.quarkus:quarkus-jdbc-h2'
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-resteasy'
-    implementation "org.seasar.doma:doma-quarkus:$domaQuarkusVersion"
-    implementation "org.seasar.doma:doma-core:$domaVersion"
-    runtimeOnly 'com.h2database:h2:1.3.175'
-
     annotationProcessor "org.seasar.doma:doma-processor:$domaVersion"
-
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-jdbc-h2'
+    implementation 'io.quarkus:quarkus-resteasy'
+    implementation "org.seasar.doma:doma-core:$domaVersion"
+    implementation "org.seasar.doma:doma-quarkus-deployment:$domaQuarkusVersion"
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }
 
 group 'org.seasar.doma'
-version '1.0'
+version '1.0-SNAPSHOT'
 
 compileJava {
     options.encoding = 'UTF-8'
