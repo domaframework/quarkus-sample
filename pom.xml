@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.seasar.doma</groupId>
     <artifactId>quarkus-sample</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <doma.version>2.37.0</doma.version>

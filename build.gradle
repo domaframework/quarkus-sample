@@ -24,7 +24,7 @@ dependencies {
 }
 
 group 'org.seasar.doma'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 compileJava {
     options.encoding = 'UTF-8'
