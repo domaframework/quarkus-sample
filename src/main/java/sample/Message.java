@@ -6,7 +6,6 @@ import org.seasar.doma.Metamodel;
 
 @Entity(metamodel = @Metamodel)
 public class Message {
-
   @Id public Integer id;
   public Text text;
   public Locale locale;
