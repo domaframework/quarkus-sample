@@ -8,6 +8,7 @@ import java.util.Objects;
 
 @ApplicationScoped
 public class MessageRepository {
+
   private final Entityql entityql;
   private final MessageDao messageDao;
 

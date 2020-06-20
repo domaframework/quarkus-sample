@@ -1,1 +1,3 @@
-select /*%expand*/* from message where id = /*id*/0
+select /*%expand*/*
+from message
+where id = /*id*/0

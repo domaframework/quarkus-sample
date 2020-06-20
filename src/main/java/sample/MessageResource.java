@@ -2,6 +2,10 @@ package sample;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import javax.inject.Inject;
+import javax.transaction.TransactionManager;
+import javax.transaction.Transactional;
+import javax.transaction.UserTransaction;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -11,6 +15,7 @@ import java.util.Objects;
 
 @Path("/hello")
 public class MessageResource {
+
   private final MessageRepository messageRepository;
 
   public MessageResource(MessageRepository messageRepository) {
@@ -27,7 +32,7 @@ public class MessageResource {
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   @Path("/{id}")
-  public String hello(@PathParam int id) throws Exception {
+  public String hello(@PathParam int id) {
     Message message = messageRepository.selectById(id);
     return message == null ? "empty" : message.text.getValue();
   }
