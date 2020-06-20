@@ -8,12 +8,12 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 You can run your application in dev mode that enables live coding using:
 ```
-./gradlew quarkusDev
+$ ./gradlew quarkusDev
 ```
 
 or
 ```
-./mvnw compile quarkus:dev
+$ ./mvnw compile quarkus:dev
 ```
 
 Once started, you can request the provided endpoint:
@@ -21,6 +21,17 @@ Once started, you can request the provided endpoint:
 $ curl -w "\n" http://localhost:8080/hello
 hello
 ```
+
+```
+$ curl -w "\n" http://localhost:8080/hello/1
+hello
+```
+
+```
+$ curl -w "\n" http://localhost:8080/hello/2
+世界
+```
+
 
 ## Packaging and running the application
 
@@ -33,7 +44,7 @@ The application is now runnable using `java -jar build/quarkus-sample-1.0-runner
 
 If you want to build an _über-jar_, just add the `--uber-jar` option to the command line:
 ```
-./gradlew quarkusBuild --uber-jar
+$ ./gradlew quarkusBuild --uber-jar
 ```
 
 ### Maven
