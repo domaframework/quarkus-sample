@@ -5,7 +5,7 @@ plugins {
 }
 
 def domaVersion = '2.37.0'
-def domaQuarkusVersion = '0.3.0'
+def domaQuarkusVersion = '0.4.0-SNAPSHOT'
 
 repositories {
      mavenLocal()
