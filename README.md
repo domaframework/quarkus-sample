@@ -66,7 +66,7 @@ First compile it:
 
 or
 
-> /gradlew build
+> ./gradlew build
 
 Then run it:
 
