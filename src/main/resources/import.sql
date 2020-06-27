@@ -1,11 +1,15 @@
-DROP ALL OBJECTS;
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO quarkus_test;
+GRANT ALL ON SCHEMA public TO public;
 
-CREATE TABLE MESSAGE(
+CREATE SEQUENCE known_fruits_id_seq INCREMENT BY 1 START WITH 10;
+
+CREATE TABLE known_fruits(
     ID INTEGER NOT NULL PRIMARY KEY,
-    TEXT VARCHAR(20),
-    LANGUAGE VARCHAR(5),
-    COUNTRY VARCHAR(5)
+    NAME VARCHAR(40) UNIQUE
 );
 
-insert into MESSAGE (id, text, language, country) values (1, 'hello', 'en', 'US');
-insert into MESSAGE (id, text, language, country) values (2, '世界', 'ja', 'JP');
+INSERT INTO known_fruits(id, name) VALUES (1, 'Cherry');
+INSERT INTO known_fruits(id, name) VALUES (2, 'Apple');
+INSERT INTO known_fruits(id, name) VALUES (3, 'Banana');

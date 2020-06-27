@@ -1,61 +1,135 @@
-# quarkus-sample project
+# Quarkus demo: Doma and RESTEasy
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This is a minimal CRUD service exposing a couple of endpoints over REST,
+with a front-end based on Angular so you can play with it from your browser.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+This project is based on [hibernate-orm-quickstart](https://github.com/quarkusio/quarkus-quickstarts/tree/master/hibernate-orm-quickstart).
 
-## Running the application in dev mode
+## Requirements
 
-You can run your application in dev mode that enables live coding using:
-```
-$ ./gradlew quarkusDev
-```
+To compile and run this demo you will need:
+
+- JDK 11+
+- GraalVM
+
+In addition, you will need either a PostgreSQL database, or Docker to run one.
+
+### Configuring GraalVM and JDK 11+
+
+Make sure that both the `GRAALVM_HOME` and `JAVA_HOME` environment variables have
+been set, and that a JDK 11+ `java` command is on the path.
+
+See the [Building a Native Executable guide](https://quarkus.io/guides/building-native-image)
+for help setting up your environment.
+
+## Building the demo
+
+Launch the Maven or the Gradle build on the checked out sources of this demo:
+
+> ./mvnw install
+
+> ./gradlew build
+
+## Running the demo
+
+### Prepare a PostgreSQL instance
+
+Make sure you have a PostgreSQL instance running. To set up a PostgreSQL database with Docker:
+
+> docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0 --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 5432:5432 postgres:10.5
+
+Connection properties for the Agroal datasource are defined in the standard Quarkus configuration file,
+`src/main/resources/application.properties`.
+
+### Live coding with Quarkus
+
+The Maven or the Gradle Quarkus plugin provides a development mode that supports
+live coding. To try this out:
+
+> ./mvnw quarkus:dev
+
+> ./gradlew quarkusDev
+
+In this mode you can make changes to the code and have the changes immediately applied, by just refreshing your browser.
+
+Hot reload works even when modifying your Doma entities.
+Try it! Even the database schema will be updated on the fly.
+
+### Run Quarkus in JVM mode
+
+When you're done iterating in developer mode, you can run the application as a
+conventional jar file.
+
+First compile it:
+
+> ./mvnw install
 
 or
+
+> /gradlew build
+
+Then run it:
+
+> java -jar ./target/quarkus-sample-1.0-runner.jar
+
+or
+
+> java -jar ./build/quarkus-sample-1.0-runner.jar
+
+Have a look at how fast it boots.
+Or measure total native memory consumption...
+
+### Run Quarkus as a native application
+
+You can also create a native executable from this application without making any
+source code changes. A native executable removes the dependency on the JVM:
+everything needed to run the application on the target platform is included in
+the executable, allowing the application to run with minimal resource overhead.
+
+Compiling a native executable takes a bit longer, as GraalVM performs additional
+steps to remove unnecessary codepaths. Use the  `native` profile to compile a
+native executable:
+
+> ./mvnw install -Dnative
+
+or 
+
+> ./gradlew build -Dquarkus.package.type=native
+
+After getting a cup of coffee, you'll be able to run this binary directly:
+
+> ./target/quarkus-sample-1.0-runner
+
+or 
+
+> ./build/quarkus-sample-1.0-runner
+
+
+Please brace yourself: don't choke on that fresh cup of coffee you just got.
+    
+Now observe the time it took to boot, and remember: that time was mostly spent to generate the tables in your database and import the initial data.
+    
+Next, maybe you're ready to measure how much memory this service is consuming.
+
+N.B. This implies all dependencies have been compiled to native;
+that's a whole lot of stuff: from the bytecode enhancements that Hibernate ORM
+applies to your entities, to the lower level essential components such as the PostgreSQL JDBC driver, the Undertow webserver.
+
+## See the demo in your browser
+
+Navigate to:
+
+<http://localhost:8080/index.html>
+
+Have fun, and join the team of contributors!
+
+## Running the demo in Kubernetes
+
+This section provides extra information for running both the database and the demo on Kubernetes.
+As well as running the DB on Kubernetes, a service needs to be exposed for the demo to connect to the DB.
+
+Then, rebuild demo docker image with a system property that points to the DB. 
+
+```bash
+-Dquarkus.datasource.jdbc.url=jdbc:postgresql://<DB_SERVICE_NAME>/quarkus_test
 ```
-$ ./mvnw compile quarkus:dev
-```
-
-Once started, you can request the provided endpoint:
-```
-$ curl -w "\n" http://localhost:8080/hello
-hello
-```
-
-```
-$ curl -w "\n" http://localhost:8080/hello/1
-hello
-```
-
-```
-$ curl -w "\n" http://localhost:8080/hello/2
-世界
-```
-
-
-## Packaging and running the application
-
-### Gradle 
-The application can be packaged using `./gradlew quarkusBuild`.
-It produces the `quarkus-sample-1.0-runner.jar` file in the `build` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `build/lib` directory.
-
-The application is now runnable using `java -jar build/quarkus-sample-1.0-runner.jar`.
-
-If you want to build an _über-jar_, just add the `--uber-jar` option to the command line:
-```
-$ ./gradlew quarkusBuild --uber-jar
-```
-
-### Maven
-The application can be packaged using `./mvnw package`.
-It produces the `quarkus-sample-1.0-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
-
-The application is now runnable using `java -jar target/quarkus-sample-1.0-runner.jar`.
-
-## Creating a native executable
-
-To create and run native executable, try the [native-image](https://github.com/domaframework/quarkus-sample/tree/native-image) branch in this repository.
-
-See also [this paragraph in the branch](https://github.com/domaframework/quarkus-sample/tree/native-image#creating-a-native-executable).

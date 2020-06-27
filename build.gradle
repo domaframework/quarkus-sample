@@ -8,15 +8,16 @@ def domaVersion = '2.37.0'
 def domaQuarkusVersion = '0.4.0-SNAPSHOT'
 
 repositories {
-     mavenLocal()
-     mavenCentral()
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
     annotationProcessor "org.seasar.doma:doma-processor:$domaVersion"
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-jdbc-h2'
+    implementation 'io.quarkus:quarkus-jdbc-postgresql'
     implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
     implementation "org.seasar.doma:doma-core:$domaVersion"
     implementation "org.seasar.doma:doma-quarkus-deployment:$domaQuarkusVersion"
     testImplementation 'io.quarkus:quarkus-junit5'
@@ -36,6 +37,6 @@ compileTestJava {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
