@@ -28,6 +28,8 @@ Launch the Maven or the Gradle build on the checked out sources of this demo:
 
 > ./mvnw install
 
+or
+
 > ./gradlew build
 
 ## Running the demo
@@ -47,6 +49,8 @@ The Maven or the Gradle Quarkus plugin provides a development mode that supports
 live coding. To try this out:
 
 > ./mvnw quarkus:dev
+
+or
 
 > ./gradlew quarkusDev
 
