@@ -9,7 +9,7 @@
 
     <properties>
         <doma.version>2.37.0</doma.version>
-        <doma-quarkus.version>0.4.0-SNAPSHOT</doma-quarkus.version>
+        <doma-quarkus.version>0.4.0</doma-quarkus.version>
         <quarkus-plugin.version>1.5.2.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
