@@ -9,11 +9,11 @@
 
     <properties>
         <doma.version>2.37.0</doma.version>
-        <doma-quarkus.version>0.4.0</doma-quarkus.version>
-        <quarkus-plugin.version>1.5.2.Final</quarkus-plugin.version>
+        <doma-quarkus.version>0.5.0-SNAPSHOT</doma-quarkus.version>
+        <quarkus-plugin.version>1.6.0.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.5.2.Final</quarkus.platform.version>
+        <quarkus.platform.version>1.6.0.Final</quarkus.platform.version>
         <surefire-plugin.version>2.22.1</surefire-plugin.version>
         <compiler-plugin.version>3.8.0</compiler-plugin.version>
         <docker-plugin.version>0.28.0</docker-plugin.version>
