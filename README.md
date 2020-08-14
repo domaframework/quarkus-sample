@@ -48,7 +48,7 @@ Connection properties for the Agroal datasource are defined in the standard Quar
 The Maven or the Gradle Quarkus plugin provides a development mode that supports
 live coding. To try this out:
 
-> ./mvnw quarkus:dev
+> ./mvnw clean quarkus:dev
 
 or
 
