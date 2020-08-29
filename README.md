@@ -26,11 +26,11 @@ for help setting up your environment.
 
 Launch the Maven or the Gradle build on the checked out sources of this demo:
 
-> ./mvnw install
+> ./mvnw install -DskipTests=true
 
 or
 
-> ./gradlew build
+> ./gradlew build -x test
 
 ## Running the demo
 
@@ -48,7 +48,7 @@ Connection properties for the Agroal datasource are defined in the standard Quar
 The Maven or the Gradle Quarkus plugin provides a development mode that supports
 live coding. To try this out:
 
-> ./mvnw clean quarkus:dev
+> ./mvnw quarkus:dev
 
 or
 
