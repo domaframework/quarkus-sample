@@ -10,7 +10,7 @@
     <properties>
         <doma.version>2.41.0</doma.version>
         <doma-quarkus.version>1.0.2</doma-quarkus.version>
-        <quarkus-plugin.version>1.7.1.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>1.7.2.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>1.7.2.Final</quarkus.platform.version>
