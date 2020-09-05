@@ -1,4 +1,4 @@
-# Quarkus demo: Doma and RESTEasy ![Java CI](https://github.com/domaframework/quarkus-sample/workflows/Java%20CI/badge.svg)
+# Quarkus demo: Doma and RESTEasy [![Java CI](https://github.com/domaframework/quarkus-sample/workflows/Java%20CI/badge.svg)](https://github.com/domaframework/quarkus-sample/actions?query=workflow%3A%22Java+CI%22)
 
 This is a minimal CRUD service exposing a couple of endpoints over REST,
 with a front-end based on Angular so you can play with it from your browser.
