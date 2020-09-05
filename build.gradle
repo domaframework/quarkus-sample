@@ -18,7 +18,7 @@ dependencies {
     implementation "org.seasar.doma:doma-core:$domaVersion"
     implementation "org.seasar.doma:doma-quarkus-deployment:$domaQuarkusVersion"
     testImplementation "io.quarkus:quarkus-junit5:${quarkusPlatformVersion}"
-    testImplementation "io.rest-assured:rest-assured:${quarkusPlatformVersion}"
+    testImplementation "io.rest-assured:rest-assured:4.3.1"
 }
 
 group 'org.seasar.doma'
