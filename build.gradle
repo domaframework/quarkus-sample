@@ -12,13 +12,13 @@ repositories {
 dependencies {
     annotationProcessor "org.seasar.doma:doma-processor:$domaVersion"
     implementation enforcedPlatform("io.quarkus:quarkus-bom:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-jdbc-postgresql'
-    implementation 'io.quarkus:quarkus-resteasy'
-    implementation 'io.quarkus:quarkus-resteasy-jsonb'
+    implementation "io.quarkus:quarkus-jdbc-postgresql:${quarkusPlatformVersion}"
+    implementation "io.quarkus:quarkus-resteasy:${quarkusPlatformVersion}"
+    implementation "io.quarkus:quarkus-resteasy-jsonb:${quarkusPlatformVersion}"
     implementation "org.seasar.doma:doma-core:$domaVersion"
     implementation "org.seasar.doma:doma-quarkus-deployment:$domaQuarkusVersion"
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation "io.quarkus:quarkus-junit5:${quarkusPlatformVersion}"
+    testImplementation "io.rest-assured:rest-assured:${quarkusPlatformVersion}"
 }
 
 group 'org.seasar.doma'
