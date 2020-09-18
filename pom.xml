@@ -53,12 +53,6 @@
         </dependency>
         <dependency>
             <groupId>org.seasar.doma</groupId>
-            <artifactId>doma-processor</artifactId>
-            <version>${doma.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seasar.doma</groupId>
             <artifactId>doma-quarkus-deployment</artifactId>
             <version>${doma-quarkus.version}</version>
         </dependency>
@@ -87,6 +81,13 @@
                     <target>11</target>
                     <!-- the parameters=true option is critical so that RESTEasy works fine -->
                     <parameters>true</parameters>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.seasar.doma</groupId>
+                            <artifactId>doma-processor</artifactId>
+                            <version>${doma.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
