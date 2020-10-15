@@ -20,6 +20,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
+import java.util.List;
 
 @Path("fruits")
 @ApplicationScoped
@@ -32,9 +33,9 @@ public class FruitResource {
   @Inject Entityql entityql;
 
   @GET
-  public Fruit[] get() {
+  public List<Fruit> get() {
     var f = new Fruit_();
-    return entityql.from(f).orderBy(c -> c.asc(f.name)).fetch().toArray(new Fruit[0]);
+    return entityql.from(f).orderBy(c -> c.asc(f.name)).fetch();
   }
 
   @GET
