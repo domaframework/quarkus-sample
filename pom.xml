@@ -8,12 +8,12 @@
     <version>1.0</version>
 
     <properties>
-        <doma.version>2.44.0</doma.version>
-        <doma-quarkus.version>1.1.0</doma-quarkus.version>
         <quarkus-plugin.version>1.9.0.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>1.9.0.Final</quarkus.platform.version>
+        <quarkus-doma.version>0.0.1</quarkus-doma.version>
+        <doma.version>2.44.0</doma.version>
         <surefire-plugin.version>2.22.2</surefire-plugin.version>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <docker-plugin.version>0.28.0</docker-plugin.version>
@@ -47,14 +47,14 @@
             <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.seasar.doma</groupId>
-            <artifactId>doma-core</artifactId>
-            <version>${doma.version}</version>
+            <groupId>io.quarkiverse.doma</groupId>
+            <artifactId>quarkus-doma</artifactId>
+            <version>${quarkus-doma.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seasar.doma</groupId>
-            <artifactId>doma-quarkus-deployment</artifactId>
-            <version>${doma-quarkus.version}</version>
+            <artifactId>doma-core</artifactId>
+            <version>${doma.version}</version>
         </dependency>
 
         <!-- Testing: -->
