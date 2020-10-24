@@ -10,16 +10,16 @@ repositories {
 }
 
 dependencies {
-    val domaVersion: String by project
     val quarkusVersion: String by project
-    val domaQuarkusVersion: String by project
-    annotationProcessor("org.seasar.doma:doma-processor:$domaVersion")
+    val quarkusDomaVersion: String by project
+    val domaVersion: String by project
     implementation(enforcedPlatform("io.quarkus:quarkus-bom:${quarkusVersion}"))
     implementation("io.quarkus:quarkus-jdbc-postgresql:${quarkusVersion}")
     implementation("io.quarkus:quarkus-resteasy:${quarkusVersion}")
     implementation("io.quarkus:quarkus-resteasy-jsonb:${quarkusVersion}")
+    implementation("io.quarkiverse.doma:quarkus-doma:$quarkusDomaVersion")
     implementation("org.seasar.doma:doma-core:$domaVersion")
-    implementation("org.seasar.doma:doma-quarkus-deployment:$domaQuarkusVersion")
+    annotationProcessor("org.seasar.doma:doma-processor:$domaVersion")
     testImplementation("io.quarkus:quarkus-junit5:${quarkusVersion}")
     testImplementation("io.rest-assured:rest-assured:4.3.1")
 }
