@@ -13,7 +13,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:10.5
+        image: postgres:10.16
         env:
           POSTGRES_USER: quarkus_test
           POSTGRES_PASSWORD: quarkus_test
