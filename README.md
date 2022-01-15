@@ -26,22 +26,13 @@ for help setting up your environment.
 
 Launch the Maven or the Gradle build on the checked out sources of this demo:
 
-> ./mvnw install -DskipTests=true
+> ./mvnw package
 
 or
 
-> ./gradlew build -x test
+> ./gradlew build
 
 ## Running the demo
-
-### Prepare a PostgreSQL instance
-
-Make sure you have a PostgreSQL instance running. To set up a PostgreSQL database with Docker:
-
-> docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0 --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 5432:5432 postgres:10.5
-
-Connection properties for the Agroal datasource are defined in the standard Quarkus configuration file,
-`src/main/resources/application.properties`.
 
 ### Live coding with Quarkus
 
@@ -66,11 +57,18 @@ conventional jar file.
 
 First compile it:
 
-> ./mvnw install
+> ./mvnw package
 
 or
 
 > ./gradlew build
+
+Next we need to make sure you have a PostgreSQL instance running (Quarkus automatically starts one for dev and test mode).
+To set up a PostgreSQL database with Docker:
+
+> docker run --rm=true --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 5432:5432 postgres:13.3
+
+Connection properties for the Agroal datasource are defined in the standard Quarkus configuration file, `src/main/resources/application.properties`.
 
 Then run it:
 
@@ -94,7 +92,7 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw install -Dnative
+> ./mvnw package -Dnative
 
 or 
 

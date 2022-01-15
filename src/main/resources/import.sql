@@ -1,6 +1,5 @@
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
-GRANT ALL ON SCHEMA public TO quarkus_test;
 GRANT ALL ON SCHEMA public TO public;
 
 CREATE SEQUENCE known_fruits_id_seq INCREMENT BY 1 START WITH 10;
