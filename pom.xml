@@ -8,10 +8,10 @@
     <version>1.0</version>
 
     <properties>
-        <quarkus-plugin.version>2.16.12.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>3.7.0</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>2.16.12.Final</quarkus.platform.version>
+        <quarkus.platform.version>3.7.0</quarkus.platform.version>
         <quarkus-doma.version>0.0.9</quarkus-doma.version>
         <doma.version>2.55.1</doma.version>
         <surefire-plugin.version>3.2.5</surefire-plugin.version>
@@ -77,8 +77,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${compiler-plugin.version}</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>17</source>
+                    <target>17</target>
                     <!-- the parameters=true option is critical so that RESTEasy works fine -->
                     <parameters>true</parameters>
                     <annotationProcessorPaths>
