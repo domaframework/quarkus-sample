@@ -21,7 +21,7 @@ dependencies {
     implementation("org.seasar.doma:doma-core:$domaVersion")
     annotationProcessor("org.seasar.doma:doma-processor:$domaVersion")
     testImplementation("io.quarkus:quarkus-junit5:${quarkusVersion}")
-    testImplementation("io.rest-assured:rest-assured:5.4.0")
+    testImplementation("io.rest-assured:rest-assured:5.5.0")
 }
 
 tasks {
