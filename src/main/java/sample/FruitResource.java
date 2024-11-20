@@ -2,7 +2,6 @@ package sample;
 
 import org.jboss.logging.Logger;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
-import org.seasar.doma.jdbc.criteria.Entityql;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -20,6 +19,8 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
+import org.seasar.doma.jdbc.criteria.QueryDsl;
+
 import java.util.List;
 
 @Path("fruits")
@@ -30,19 +31,20 @@ public class FruitResource {
 
   private static final Logger LOGGER = Logger.getLogger(FruitResource.class.getName());
 
-  @Inject Entityql entityql;
+  @Inject
+  QueryDsl queryDsl;
 
   @GET
   public List<Fruit> get() {
     var f = new Fruit_();
-    return entityql.from(f).orderBy(c -> c.asc(f.name)).fetch();
+    return queryDsl.from(f).orderBy(c -> c.asc(f.name)).fetch();
   }
 
   @GET
   @Path("{id}")
   public Fruit getSingle(@PathParam Integer id) {
     var f = new Fruit_();
-    Fruit entity = entityql.from(f).where(c -> c.eq(f.id, id)).fetchOne();
+    Fruit entity = queryDsl.from(f).where(c -> c.eq(f.id, id)).fetchOne();
     if (entity == null) {
       throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
     }
@@ -57,7 +59,7 @@ public class FruitResource {
     }
 
     var f = new Fruit_();
-    entityql.insert(f, fruit).execute();
+    queryDsl.insert(f).single(fruit).execute();
     return Response.ok(fruit).status(201).build();
   }
 
@@ -70,14 +72,14 @@ public class FruitResource {
     }
 
     var f = new Fruit_();
-    Fruit entity = entityql.from(f).where(c -> c.eq(f.id, id)).fetchOne();
+    Fruit entity = queryDsl.from(f).where(c -> c.eq(f.id, id)).fetchOne();
 
     if (entity == null) {
       throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
     }
 
     entity.setName(fruit.getName());
-    entityql.update(f, entity).execute();
+    queryDsl.update(f).single(entity).execute();
 
     return entity;
   }
@@ -87,11 +89,11 @@ public class FruitResource {
   @Transactional
   public Response delete(@PathParam Integer id) {
     var f = new Fruit_();
-    Fruit entity = entityql.from(f).where(c -> c.eq(f.id, id)).fetchOne();
+    Fruit entity = queryDsl.from(f).where(c -> c.eq(f.id, id)).fetchOne();
     if (entity == null) {
       throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
     }
-    entityql.delete(f, entity).execute();
+    queryDsl.delete(f).single(entity).execute();
     return Response.status(204).build();
   }
 
