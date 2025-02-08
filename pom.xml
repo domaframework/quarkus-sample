@@ -13,7 +13,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.18.2</quarkus.platform.version>
         <quarkus-doma.version>0.0.13</quarkus-doma.version>
-        <doma.version>3.3.0</doma.version>
+        <doma.version>3.4.0</doma.version>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
         <docker-plugin.version>0.28.0</docker-plugin.version>
