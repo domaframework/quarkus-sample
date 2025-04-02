@@ -8,10 +8,10 @@
     <version>1.0</version>
 
     <properties>
-        <quarkus-plugin.version>3.21.0</quarkus-plugin.version>
+        <quarkus-plugin.version>3.21.1</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.21.0</quarkus.platform.version>
+        <quarkus.platform.version>3.21.1</quarkus.platform.version>
         <quarkus-doma.version>0.0.13</quarkus-doma.version>
         <doma.version>3.6.0</doma.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
