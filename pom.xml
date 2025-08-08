@@ -12,7 +12,7 @@
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.25.1</quarkus.platform.version>
-        <quarkus-doma.version>1.0.5</quarkus-doma.version>
+        <quarkus-doma.version>1.0.6</quarkus-doma.version>
         <doma.version>3.11.0</doma.version>
         <surefire-plugin.version>3.5.3</surefire-plugin.version>
         <compiler-plugin.version>3.14.0</compiler-plugin.version>
