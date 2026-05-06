@@ -21,7 +21,7 @@
 # docker run -i --rm -p 8080:8080 -p 5005:5005 -e JAVA_ENABLE_DEBUG="true" quarkus/hibernate-orm-jvm
 #
 ###
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1777918097@sha256:26af510e1a572ade0b76ab7b2b614fef064d0ba6070e81da184862cfb91ac64a 
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1778072014@sha256:308d6f6b433dfb38b5df78e23a66d42decfa997e556b92d38733df710ec38634 
 
 ARG JAVA_PACKAGE=java-11-openjdk-headless
 ARG RUN_JAVA_VERSION=1.3.8
