@@ -14,7 +14,7 @@
 # docker run -i --rm -p 8080:8080 quarkus/hibernate-orm
 #
 ###
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1784625896@sha256:68707a76df71bf79b2355d93ae464a14183a23fcf02b2e26241eb4dcf71a11b3
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.10-1784668437@sha256:eb2beada3e04ca894aee14cfae54c795ddb27af3193bf4a57e94ff767a69f07a
 WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
